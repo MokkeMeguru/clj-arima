@@ -8,4 +8,6 @@
                  [net.mikera/core.matrix "0.61.0"]
                  [net.mikera/vectorz-clj "0.47.0"]
                  [expresso "0.2.2"]
-                 [quil "2.6.0"]])
+                 [com.hypirion/clj-xchart "0.2.0"]
+                 ;; test
+                 [clj-quandl-api "0.2.1"]])
