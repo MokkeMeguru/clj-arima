@@ -1,4 +1,4 @@
-(ns clj-arima.difference
+(ns clj-arima.util.difference
   (:require [clj-arima.data.quandl :refer [sample-data]]
             [clj-time.core :as t]
             [clj-time.format :as f])
@@ -16,7 +16,6 @@
      (drop k data)))
 
 (defn- setup-data
-  ;; (52 * 7 = 364) + delect (1) + (52 * 7 = 364)
   [rawdata]
   (loop [x rawdata
          newx nil]
@@ -43,17 +42,17 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; type ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(count
- (:date
-  (seasonaldifference
-   (:date sample-data)
-   (:close-price sample-data))))
+;; test ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (count
+;;  (:date
+;;   (seasonaldifference
+;;    (:date sample-data)
+;;    (:close-price sample-data))))
 
-(type (:date sample-data))
-(:date sample-data)
+;; (type (:date sample-data))
+;; (:date sample-data)
 
-(difference 1 (:close-price sample-data))
-(count (:close-price sample-data))
-(setup-data (:close-price sample-data))
+;; (difference 1 (:close-price sample-data))
+;; (count (:close-price sample-data))
+;; (setup-data (:close-price sample-data))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
