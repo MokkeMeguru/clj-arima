@@ -97,12 +97,13 @@
         rejection (get-in Rejection-value
                           [:trend
                            (if restrict :1% :5%)
-                           (condp <= data-len
-                             500 :500
-                             250 :250
-                             100 :100
+                           (condp >= data-len
+                             25 :25
                              50 :50
-                             25 :25)])
+                             100 :100
+                             250 :250
+                             500 :500
+                             :over)])
         adf-value (/ (stats/mean adf) (stats/variance adf))]
     (if adf
       {:adf adf-value :reject? (> rejection adf-value)}
