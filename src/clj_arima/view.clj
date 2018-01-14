@@ -22,7 +22,7 @@
        :y seq}}
      {:theme :xchart})))
 
-(defn func-plot [func a b & {:keys [name] :ro {name "function-plot"}}]
+(defn func-plot [func a b & {:keys [name] :or {name "function-plot"}}]
   (if (> a b)
     (func-plot b a)
     (let [line (range a b (/ (- b a) 200))
