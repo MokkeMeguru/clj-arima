@@ -13,4 +13,6 @@
                  ;; will remove
                  [incanter/incanter-core "1.5.7"]
                  ;; test
-                 [clj-quandl-api "0.2.1"]])
+                 [clj-quandl-api "0.2.1"]
+                 ;; to use apache-commons-math3
+                 [org.apache.commons/commons-math3 "3.6.1"]])
