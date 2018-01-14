@@ -1,6 +1,7 @@
 (ns clj-arima.view
   (:require [com.hypirion.clj-xchart :as chart]
-            [clj-arima.data.quandl :refer [sample-data]]))
+            ;;[clj-arima.data.quandl :refer [sample-data]]
+            ))
 
 (defn tschart [seq & {:keys [name] :or {name "tsdata"}}]
   (let [seq-len (count seq)]

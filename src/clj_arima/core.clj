@@ -8,3 +8,5 @@
             [clj-arima.test.adf :refer [stationary-adftest]]))
 
 (set-current-implementation :vectorz)
+
+(defn -main [])

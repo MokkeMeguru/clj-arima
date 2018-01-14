@@ -1,5 +1,5 @@
 (ns clj-arima.test.adf
-  (:require [clj-arima.data.quandl :refer [sample-data]]
+  (:require ;;[clj-arima.data.quandl :refer [sample-data]]
             [clj-arima.util.difference :as diff]
             [clojure.core.matrix.linear :as linear]
             [clojure.core.matrix.stats :as stats])

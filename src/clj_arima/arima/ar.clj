@@ -1,12 +1,7 @@
 (ns clj-arima.arima.ar
   (:require [clojure.core.matrix.linear :as linear]
             [clojure.core.matrix.stats :as stats]
-            [clj-arima.util :as util])
-  (:use [clojure.core.matrix]
-        [clojure.core.matrix.operators]
-        [clojure.core.matrix.dataset]))
-
-(set-current-implementation :vectorz)
+            [clj-arima.util :as util]))
 
 (defn ar [seq coefs sigma]
   (let [e (util/normal-dist 1 :sd sigma)

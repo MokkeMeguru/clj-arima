@@ -4,7 +4,7 @@
             [clj-arima.util :as util]
             [clj-arima.arima.ar :as ar]
             [clj-arima.arima.ma :as ma]
-            [clj-arima.data.quandl :refer [sample-data]]
+            ;; [clj-arima.data.quandl :refer [sample-data]]
             [clj-arima.util.difference :as diff]
             [clj-arima.test.adf :as adf]
             [clj-arima.util.log-likelihood :as likelihood]
@@ -21,7 +21,7 @@
            [org.apache.commons.math3.optim InitialGuess]
            [org.apache.commons.math3.optim.nonlinear.scalar.noderiv NelderMeadSimplex]))
 
-(set-current-implementation :vectorz)
+;; (set-current-implementation :vectorz)
 
 (defn arma [yseq eseq pseq qseq sigma]
   (let [e (util/normal-dist 1 :sd sigma)

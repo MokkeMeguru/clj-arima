@@ -1,12 +1,9 @@
 (ns clj-arima.arima.ma
   (:require [clojure.core.matrix.linear :as linear]
             [clojure.core.matrix.stats :as stats]
-            [clj-arima.util :as util])
-  (:use [clojure.core.matrix]
-        [clojure.core.matrix.operators]
-        [clojure.core.matrix.dataset]))
+            [clj-arima.util :as util]))
 
-(set-current-implementation :vectorz)
+
 
 (defn random-walk [y]
   (let [e (util/normal-dist 1)

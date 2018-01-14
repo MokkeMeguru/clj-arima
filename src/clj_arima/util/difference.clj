@@ -1,11 +1,8 @@
 (ns clj-arima.util.difference
-  (:require [clj-arima.data.quandl :refer [sample-data]]
+  (:require ;; [clj-arima.data.quandl :refer [sample-data]]
             [clj-time.core :as t]
-            [clj-time.format :as f])
-  (:use [clojure.core.matrix]
-        [clojure.core.matrix.operators]))
+            [clj-time.format :as f]))
 
-(set-current-implementation :vectorz)
 ;; data
 ;; [latest ... oldest]
 
