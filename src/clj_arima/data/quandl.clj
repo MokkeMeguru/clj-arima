@@ -6,7 +6,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; test ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (quandl/set-api-key! "")
-(def sample-data (quandl/quandl "NIKKEI/INDEX"
-                                :rows 100
-                                :collapse "weekly"))
+;; (def sample-data (quandl/quandl "NIKKEI/INDEX"
+;;                                 :rows 100
+;;                                 :collapse "weekly"))
+(def sample-data nil)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
