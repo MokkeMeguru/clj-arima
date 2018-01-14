@@ -1,6 +1,10 @@
-(ns clj-arima.core)
+(ns clj-arima.core
+  (:use [clojure.core.matrix]
+        [clojure.core.matrix.operators]
+        [clojure.core.matrix.dataset])
+  (:require [clj-arima.arima :refer [single-arima-forecasting-with-aic
+                                     arima-forecasting-with-aic]]
+            [clj-arima.view :refer [tschart barchart func-plot view]]
+            [clj-arima.test.adf :refer [stationary-adftest]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(set-current-implementation :vectorz)

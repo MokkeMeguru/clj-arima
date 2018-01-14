@@ -5,7 +5,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; test ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(quandl/set-api-key! "8zvcussLPAzz7xbdisQb")
+;; (quandl/set-api-key! "")
 (def sample-data (quandl/quandl "NIKKEI/INDEX"
                                 :rows 100
                                 :collapse "weekly"))

@@ -104,12 +104,10 @@
                              250 :250
                              500 :500
                              :over)])
-        adf-value (/ (stats/mean adf) (stats/variance adf))]
+        adf-value (/ (stats/mean adf) (stats/sd adf))]
     (if adf
       {:adf adf-value :reject? (> rejection adf-value)}
       {:adf "ERROR"})))
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; test ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
