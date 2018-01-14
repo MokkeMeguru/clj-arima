@@ -11,38 +11,6 @@
 
 (set-current-implementation :vectorz)
 
-(defn test [{:keys [vt ft at pt t z h]} y]
-  (let [v  (i/minus y (i/mmult z at))
-        zt (if (array? z)
-             (i/trans z)
-             z)
-        ;;f  (inc (first (i/mmult z pt zt))) 
-        ;;  kt (if (nil? t)
-        ;;       (-> (mmul pt zt)
-        ;;           (i/plus h)
-        ;;           (i/div f))
-        ;;       (-> (mmul t pt zt)
-        ;;           (i/plus h)
-        ;;           (i/div f)))
-        ;;  at (if (nil? t)
-        ;;       (i/plus  at
-        ;;                (i/mmult kt v))
-        ;;       (i/plus (i/mmult t at)
-        ;;               (i/mmult kt v)))
-        ;;  lt (if (nil? t)
-        ;;       (i/mmult kt z)
-        ;;       (i/minus t (i/mmult kt z)))
-        ;; jt (i/minus h kt)
-        ;; pt (if (nil? t)
-        ;;      (i/plus (i/mmult pt (i/trans lt))
-        ;;              (i/mmult h (i/trans jt)))
-        ;;      (i/plus (i/mmult t pt (transpose lt))
-        ;;              (i/mmult h (transpose jt))))
-        ]
-    ;; {:vt (cons v vt)
-    ;;  :ft (cons f ft)
-    ;;  :at at :pt pt :t t :h h :z z}
-    ))
 ;; FROM github henrygamer/succession
 ;; (transpose 1.0)
 (defn log-likelihood* [{:keys [vt ft at pt t z h]} y]
