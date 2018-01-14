@@ -22,15 +22,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; test  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (clj-arima.view/view  (clj-arima.view/tschart (take 50 (random-walk 0))))
-(clj-arima.view/view
- (clj-arima.view/tschart
-  (take 100
-        (ma (util/normal-dist 5) [0 0 0 0 1] 0.5))))
+;; (clj-arima.view/view
+;;  (clj-arima.view/tschart
+;;   (take 100
+;;         (ma (util/normal-dist 5) [0 0 0 0 1] 0.5))))
 
-(clj-arima.view/view
- (clj-arima.view/barchart
-  (take 15
-        (util/acf
-         (take 5000
-               (ma (util/normal-dist 5) [0 0 0 0 1] 0.2))))))
+;; (clj-arima.view/view
+;;  (clj-arima.view/barchart
+;;   (take 15
+;;         (util/acf
+;;          (take 5000
+;;                (ma (util/normal-dist 5) [0 0 0 0 1] 0.2))))))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
