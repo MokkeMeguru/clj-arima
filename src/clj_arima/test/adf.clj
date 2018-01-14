@@ -4,7 +4,7 @@
             [clojure.core.matrix.linear :as linear]
             [clojure.core.matrix.stats :as stats])
   (:use [clojure.core.matrix]
-        [clojure.core.matrix.operators]
+        ;;[clojure.core.matrix.operators]
         [clojure.core.matrix.dataset]))
 
 (set-current-implementation :vectorz)

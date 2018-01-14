@@ -3,8 +3,9 @@
             [clojure.core.matrix.linear :as linear])
   (:import (cern.jet.random.tdouble Normal))
   (:use [clojure.core.matrix]
-        [clojure.core.matrix.operators]
-        [clojure.core.matrix.dataset]))
+        ;; [clojure.core.matrix.operators]
+        ;; [clojure.core.matrix.dataset]
+        ))
 
 (set-current-implementation :vectorz)
 

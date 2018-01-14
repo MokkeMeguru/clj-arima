@@ -6,8 +6,9 @@
             [incanter.stats :as s]
             [clj-time.core :as t])
   (:use [clojure.core.matrix]
-        [clojure.core.matrix.operators]
-        [clojure.core.matrix.dataset]))
+        ;;[clojure.core.matrix.operators]
+        [clojure.core.matrix.dataset]
+        ))
 
 (set-current-implementation :vectorz)
 

@@ -8,7 +8,7 @@
                  [net.mikera/core.matrix "0.61.0"]
                  [net.mikera/vectorz-clj "0.47.0"]
                  [expresso "0.2.2"]
-                 [com.hypirion/clj-xchart "0.2.0"]
+                 ;; [com.hypirion/clj-xchart "0.2.0"]
                  [net.sourceforge.parallelcolt/parallelcolt "0.10.1"]
                  ;; will remove
                  [incanter/incanter-core "1.5.7"]

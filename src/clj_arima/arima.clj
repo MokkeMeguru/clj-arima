@@ -10,8 +10,9 @@
             [clj-arima.util.log-likelihood :as likelihood]
             [incanter.core :as i])
   (:use [clojure.core.matrix]
-        [clojure.core.matrix.operators]
-        [clojure.core.matrix.dataset])
+        ;;[clojure.core.matrix.operators]
+        ;; [clojure.core.matrix.dataset]
+        )
   (:import [org.apache.commons.math3.optim.nonlinear.scalar ObjectiveFunction]
            [org.apache.commons.math3.analysis MultivariateFunction]
            [org.apache.commons.math3.optim.nonlinear.scalar.noderiv SimplexOptimizer]
