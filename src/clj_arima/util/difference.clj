@@ -12,8 +12,10 @@
 (defn difference
   "k difference"
   [^Integer k ^clojure.lang.PersistentVector data]
-  (- (drop-last k data)
-     (drop k data)))
+  (if (zero? k)
+    data
+    (difference (dec k) (- (drop-last k data)
+                           (drop k data)))))
 
 (defn- setup-data
   [rawdata]
