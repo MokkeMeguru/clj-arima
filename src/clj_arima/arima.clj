@@ -150,8 +150,8 @@
         [upper lower n d best-aic]
         (arima-forecasting-with-aic* maxp d maxq rdata len)
         start (first rdata)
-        upper-res (diff/undifference (take d rdata) (* -1 upper))
-        lower-res (diff/undifference (take d rdata) (* -1 upper))]
+        upper-res (diff/undifference (take d rdata)  upper)
+        lower-res (diff/undifference (take d rdata) upper)]
     {:upper upper-res :lower lower-res :n n :d d
      :p (:ar best-aic) :q (:ma best-aic) :aic (:aic best-aic)}))
 

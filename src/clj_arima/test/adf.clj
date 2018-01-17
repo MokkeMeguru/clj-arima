@@ -4,7 +4,7 @@
             [clojure.core.matrix.linear :as linear]
             [clojure.core.matrix.stats :as stats])
   (:use [clojure.core.matrix]
-        ;;[clojure.core.matrix.operators]
+        [clojure.core.matrix.operators]
         [clojure.core.matrix.dataset]))
 
 (set-current-implementation :vectorz)
@@ -12,10 +12,10 @@
 (defn- embed
   ([x xlen lag]
    (let [map- (map #(vector % (+ (- xlen lag) %)) (range lag))]
-     (array (map #(subvec x (first %) (second %)) map-))))
+     (array (map #(subvec (into [] x) (first %) (second %)) map-))))
   ([x xlen lag option]
    (let [map- (map #(vector % (+ lag option %)) (range lag))]
-     (array (map #(subvec x (first %) (second %)) map-)))))
+     (array (map #(subvec  (into [] x) (first %) (second %)) map-)))))
 
 (defn- stat-adf-array
   "NOTICE : (dec (count x)) > lag"
@@ -32,7 +32,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; test ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (shape (stat-adf-array [0 1 2 3 4 5 6 7 8] 3)) ;; [6 6]
+;; (shape (stat-adf-array [0 1 2 3 4 5 6 7 8] 2)) ;; [6 6]
 ;; (pm  (stat-adf-array [0 1 2 3 4 5 6 7 8] 3))
 ;; [[1.000 -1.000 -1.000 -1.000 1.000 6.000]
 ;;  [2.000 -1.000 -1.000 -1.000 1.000 5.000]
@@ -88,7 +88,7 @@
            : false=> 5%
   "
   [data lag restrict]
-  (let [data-len (count data)
+  (let [data-len (count (list data))
         adf      (if (< lag (* 12 (pow (/ data-len 100) 0.25)))
                    (for [i (range (- data-len (+ lag lag 3)))]
                      (first (stationary-adftest-elem

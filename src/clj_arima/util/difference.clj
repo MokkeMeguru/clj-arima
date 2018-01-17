@@ -13,13 +13,16 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn difference*
+  [series]
+  (map - (drop 1 series) series))
+
 (defn difference
-  "k difference"
   [^Integer k ^clojure.lang.PersistentVector data]
-  (if (zero? k)
-    data
-    (difference (dec k) (array (- (array (drop-last k data))
-                                  (array (drop k data)))))))
+  (loop [i  k
+         d  data]
+    (if (zero? i) d
+        (recur (dec i) (difference* d)))))
 
 (defn- setup-data
   [rawdata]
@@ -99,6 +102,11 @@
 ;; (= (take 10 (:close-price sample-data))
 ;;    (take 10 (undifference
 ;;              (create-seeds (take 1 (:close-price sample-data)))
-;;              (* -1 (difference 1 (:close-price sample-data))))))
+;;              (difference 1 (:close-price sample-data)))))
+
+;; (=  (list 1 2 2312 4 5 123 1231241 1 321312 231)
+;;     (undifference
+;;      (create-seeds (take 1 (list 1 2 2312 4 5 123 1231241 1 321312 231)))
+;;      (difference 1 (list 1 2 2312 4 5 123 1231241 1 321312 231))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
