@@ -17,7 +17,7 @@
    (let [map- (map #(vector % (+ lag option %)) (range lag))]
      (array (map #(subvec  (into [] x) (first %) (second %)) map-)))))
 
-(defn- stat-adf-array
+(defn stat-adf-array
   "NOTICE : (dec (count x)) > lag"
   [x lag]
   (let [diffx (diff/difference 1 x)
@@ -43,10 +43,10 @@
 ;;    yt1  \delta yt1 .......   const trend
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defn- stationary-adftest-elem
+(defn stationary-adftest-elem
   [x lag]
   (let [a (stat-adf-array x lag)
-        dyt (subvec (diff/difference 1 x) 0 (+ lag 3))]
+        dyt (subvec (into [] (diff/difference 1 x)) 0 (+ lag 3))]
     (linear/solve a dyt)))
 
 (def Rejection-value
@@ -88,8 +88,8 @@
            : false=> 5%
   "
   [data lag restrict]
-  (let [data-len (count (list data))
-        adf      (if (< lag (* 12 (pow (/ data-len 100) 0.25)))
+  (let [data-len (count  data)
+        adf      (if (< lag (* 12 (Math/pow (/ data-len 100) 0.25)))
                    (for [i (range (- data-len (+ lag lag 3)))]
                      (first (stationary-adftest-elem
                              (subvec data i (+ i lag lag 3)) lag)))
@@ -104,8 +104,11 @@
                              250 :250
                              500 :500
                              :over)])
-        adf-value (/ (stats/mean adf) (stats/sd adf))]
-    (if adf
+        adf-value (if-not (= '() adf)
+                    (/ (stats/mean adf)
+                       (stats/sd adf))
+                    nil)]
+    (if-not (= '() adf)
       {:adf adf-value :reject? (> rejection adf-value)}
       {:adf "ERROR"})))
 
