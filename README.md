@@ -1,10 +1,14 @@
 # clj-arima
 
-A Clojure library designed to ... well, that part is up to you.
+In development
 
 ## Usage
 
-FIXME
+Since this API is under development, other people can not use now
+
+## Future 
+
+We will develop this api with [[neandelthal][https://github.com/uncomplicate/neanderthal]]
 
 ## License
 
