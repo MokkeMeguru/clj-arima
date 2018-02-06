@@ -12,7 +12,6 @@ We will develop this api with [neandelthal](https://github.com/uncomplicate/nean
 
 ## License
 
-Copyright © 2018 FIXME
-
+Copyright © 2018 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
