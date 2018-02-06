@@ -8,7 +8,7 @@ Since this API is under development, other people can not use now
 
 ## Future 
 
-We will develop this api with [[neandelthal][https://github.com/uncomplicate/neanderthal]]
+We will develop this api with [neandelthal](https://github.com/uncomplicate/neanderthal)
 
 ## License
 
